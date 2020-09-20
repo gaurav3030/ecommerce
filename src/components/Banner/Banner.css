@@ -1,0 +1,29 @@
+.banner{
+    height: calc(100vh - 60px);
+    width: 100vw;
+    background-image: url('../../image/pexels-eric-montanah-1350789.jpg');
+    background-size: 100vw calc(100vh - 60px);
+    background-repeat: no-repeat;
+}
+.bgcover{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+}
+.banner-text{
+    color: white;
+    font-size: 30px;
+    padding: 60px 0;
+    margin-top: 20px;
+}
+.banner-button{
+    background: white;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 120px;
+    cursor: pointer;
+}
