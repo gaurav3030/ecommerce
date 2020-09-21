@@ -26,4 +26,9 @@
     font-size: 20px;
     margin-top: 120px;
     cursor: pointer;
+    transition: box-shadow 0.2s;
+    box-shadow: 2px 2px 10px 3px #00000000;
+}
+.banner-button:hover{
+    box-shadow: 2px 2px 10px 3px #00000099;
 }
