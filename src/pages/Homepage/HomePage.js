@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Homepage.css';
-import Header from '../../components/Header/Header';
+
 import Banner from '../../components/Banner/Banner';
+
+import UserContext from '../../context/UserContext';
  
-function Homepage() {
+function Homepage(props) {
+  const { userData } = useContext(UserContext);
+  useEffect(() => {
+    
+    if (!userData.user) props.history.push("/login");
+  });
   return (
     <div>
-      <Header />
       <Banner />
     </div>
   );

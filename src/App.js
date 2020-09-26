@@ -2,16 +2,19 @@ import React, {useState,useEffect} from 'react';
 import './App.css';
 import Axios from 'axios';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Header from './components/Header/Header';
 import Homepage from './pages/Homepage/HomePage';
 import Register from './pages/AuthPage/Register';
 import Login from './pages/AuthPage/Login';
 import UserContext from './context/UserContext';
+import AdminPage from './pages/AdminPage/AdminPage';
 
 function App() {
   const [userData , setUserData] = useState({
     token: undefined,
     user: undefined,
   });
+  
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -35,19 +38,25 @@ function App() {
         });
       }
       
+      
     }
     checkLoggedIn();
-  }, []);
+    
+  });
+
 
 
   return (
     <>
+      
       <BrowserRouter>
         <UserContext.Provider value={{userData , setUserData}}>
+        <Header />
           <Switch>
             <Route path="/" component ={Homepage} exact />
             <Route path="/register" component ={Register} />
             <Route path="/login" component ={Login} />
+            <Route path="/admin" component ={AdminPage} />
           </Switch>
         </UserContext.Provider>
       </BrowserRouter>

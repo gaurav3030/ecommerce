@@ -1,0 +1,21 @@
+.error{
+    border: 1px solid rgb(228, 62, 62);
+    background-color: rgb(248, 134, 134);
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    color: white;
+    position: relative;
+    
+}
+.error button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    padding: 0 0.5rem;
+    color: white;
+    outline: none;
+}

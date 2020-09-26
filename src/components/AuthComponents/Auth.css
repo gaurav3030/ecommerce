@@ -1,0 +1,46 @@
+.auth-page{
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+
+}
+.auth-page h2{
+    margin: 1rem 0;
+    
+}
+.auth-page label{
+    font-size: 1.1rem;
+}
+.auth-page input[type="text"],
+.auth-page input[type="email"],
+.auth-page input[type="password"]{
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    border: 1px solid #000;
+    height: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+}
+.auth-page input[type="submit"]{
+    border: none;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+ 
+.title{
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}

@@ -1,9 +1,9 @@
 import React, {useState , useContext} from 'react';
-import { Link , useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 import './Auth.css';
 import Axios from 'axios';
-import Header from '../../components/Header/Header';
 import UserContext from '../../context/UserContext';
+import Error from '../../components/misc/Error';
 
 
 export default function Register() {
@@ -11,29 +11,37 @@ export default function Register() {
     const [password , setPassword] = useState();
     const [passwordCheck , setPasswordCheck] = useState();
     const [displayName , setDsiplayName] = useState();
+    const [error , setError] = useState();
     
     const {setUserData} = useContext(UserContext);
     const history = useHistory();
     const submit =  async  (e) =>{
         e.preventDefault();
-        const newUser = {email , password , passwordCheck , displayName};
-        await Axios.post("http://localhost:5000/users/register/",newUser);
+        try{
+            const newUser = {email , password , passwordCheck , displayName};
+            await Axios.post("http://localhost:5000/users/register/",newUser);
+            
+            const loginRes = await Axios.post("http://localhost:5000/users/login/",
+                {email,password}
+            );
+            setUserData({
+                token: loginRes.data.token,
+                user: loginRes.data.user,
+            });
+            localStorage.setItem("auth-token", loginRes.data.token);
+            history.push("/");
+        }
+        catch(err){
+            err.response.data.msg && setError(err.response.data.msg);
+        }
         
-        const loginRes = await Axios.post("http://localhost:5000/users/login/",
-            {email,password}
-        );
-        setUserData({
-            token: loginRes.data.token,
-            user: loginRes.data.user,
-        });
-        localStorage.setItem("auth-token", loginRes.data.token);
-        history.push("/");
     }
     return (
         <>
-        <Link to="/"><Header /></Link>
+        
         <div className="auth-page">
             <h2>Register </h2>
+            {error && <Error message = {error} clearError={()=> setError(undefined) }/>}
             <form onSubmit={submit}>
                 <label htmlFor="register-email">Email</label>
                 <input id="register-email" type="email" onChange={e=> setEmail(e.target.value)}/>
