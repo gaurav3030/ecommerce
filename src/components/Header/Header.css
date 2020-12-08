@@ -1,6 +1,6 @@
 .header{
     width: 100vw;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Playfair Display', serif;
     text-align: center;
     z-index: 0;
@@ -10,7 +10,7 @@
 }
 .header-mid{
     display: inline-block;
-    margin: 20px auto;
+    margin: 10px auto;
     letter-spacing: 2px;
     font-weight: 700;
 
@@ -22,7 +22,7 @@
     font-weight: 500;
     letter-spacing: 3px;
     display: inline-block;
-    margin: 20px;
+    margin: 10px 20px;
     position: relative;
     
 }

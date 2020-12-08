@@ -6,7 +6,7 @@ import Axios from 'axios';
 import LoginForm from '../../components/AuthComponents/LoginForm';
 
 
-export default function Login() {
+export default function Login(props) {
 
     const [email , setEmail] = useState();
     const [password , setPassword] = useState();
@@ -14,6 +14,8 @@ export default function Login() {
 
     const {setUserData} = useContext(UserContext);
     const history = useHistory();
+    
+    
     const submit =  async  (e) =>{
         e.preventDefault();
         try{

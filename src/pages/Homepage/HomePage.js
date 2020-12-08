@@ -6,10 +6,15 @@ import Banner from '../../components/Banner/Banner';
 import UserContext from '../../context/UserContext';
  
 function Homepage(props) {
+  
   const { userData } = useContext(UserContext);
   useEffect(() => {
     
-    if (!userData.user) props.history.push("/login");
+    if (!userData.user){ 
+      props.history.push("/login");
+      console.log(userData.user);
+    }
+    
   });
   return (
     <div>

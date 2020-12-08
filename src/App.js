@@ -9,12 +9,12 @@ import Login from './pages/AuthPage/Login';
 import UserContext from './context/UserContext';
 import AdminPage from './pages/AdminPage/AdminPage';
 
-function App() {
+function App(props) {
   const [userData , setUserData] = useState({
     token: undefined,
     user: undefined,
   });
-  
+  const [loading, setLoading] = useState(0);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -37,13 +37,15 @@ function App() {
           user: userRes.data,
         });
       }
-      
+      setLoading(1);
       
     }
     checkLoggedIn();
     
   });
-
+  if (loading===0) {
+    return null;
+  }
 
 
   return (
@@ -56,7 +58,7 @@ function App() {
             <Route path="/" component ={Homepage} exact />
             <Route path="/register" component ={Register} />
             <Route path="/login" component ={Login} />
-            <Route path="/admin" component ={AdminPage} />
+            <Route path="/shop" component ={AdminPage} />
           </Switch>
         </UserContext.Provider>
       </BrowserRouter>

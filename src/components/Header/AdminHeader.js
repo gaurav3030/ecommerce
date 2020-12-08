@@ -1,19 +1,17 @@
 import React , {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import UserContext from '../../context/UserContext'
+import AdminContext from '../../context/AdminContext'
 
 function Header() {
-  const {userData , setUserData} = useContext(UserContext);
-  
+  const {adminData , setAdminData} = useContext(AdminContext);
   const logout = () => {
-    setUserData({
+    setAdminData({
       token: undefined,
       user: undefined
     });
-    localStorage.setItem("auth-token","");
+    localStorage.setItem("auth-admin-token","");
   }
-  
   return (
     <div className="header">
         <div className="header-left">
@@ -25,8 +23,8 @@ function Header() {
         <div className="header-right">
             <div className="header-button">CART</div>
             {
-              userData.user ? <div className="header-button" onClick={logout}>LOGOUT</div> :
-                <Link to="/login"><div className="header-button">LOGIN</div></Link>
+              adminData.admin ? <div className="header-button" onClick={logout}>LOGOUT</div> :
+                <Link to="/admin/login"><div className="header-button">LOGIN</div></Link>
               
             }
             
