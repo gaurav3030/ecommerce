@@ -7,7 +7,7 @@ import Homepage from './pages/Homepage/HomePage';
 import Register from './pages/AuthPage/Register';
 import Login from './pages/AuthPage/Login';
 import UserContext from './context/UserContext';
-import AdminPage from './pages/AdminPage/AdminPage';
+import ShopPage from './pages/ShopPage/Shop';
 
 function App(props) {
   const [userData , setUserData] = useState({
@@ -58,7 +58,7 @@ function App(props) {
             <Route path="/" component ={Homepage} exact />
             <Route path="/register" component ={Register} />
             <Route path="/login" component ={Login} />
-            <Route path="/shop" component ={AdminPage} />
+            <Route path="/shop" component ={ShopPage} />
           </Switch>
         </UserContext.Provider>
       </BrowserRouter>

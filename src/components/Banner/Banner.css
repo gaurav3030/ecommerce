@@ -4,6 +4,7 @@
     background-image: url('../../image/pexels-eric-montanah-1350789.jpg');
     background-size: 100vw calc(100vh - 60px);
     background-repeat: no-repeat;
+    display: block;
 }
 .bgcover{
     height: 100%;

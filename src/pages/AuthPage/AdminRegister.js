@@ -20,7 +20,7 @@ export default function Register() {
         try{
             const newUser = {email:adminEmail , password:adminPassword , passwordCheck:adminPasswordCheck ,displayName: adminDisplayName};
             await Axios.post("http://localhost:5000/admin/register/",newUser);
-            console.log("here");
+           
             const loginRes = await Axios.post("http://localhost:5000/admin/login/",
                 {email:adminEmail,password:adminPassword}
             );

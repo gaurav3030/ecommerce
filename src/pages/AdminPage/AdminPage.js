@@ -56,6 +56,7 @@ function AdminPage() {
             <Route path="/admin/register" component ={Register} />
             <Route path="/admin/login" component ={Login} />
             
+            
           </Switch>
         </AdminContext.Provider>
       </BrowserRouter>
