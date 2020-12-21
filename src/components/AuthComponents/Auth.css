@@ -1,11 +1,9 @@
 .auth-page{
     width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    display: inline;
+    margin: 20px auto;
     text-align: center;
-
+    
 }
 .auth-page h2{
     margin: 1rem 0;

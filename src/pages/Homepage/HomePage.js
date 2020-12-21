@@ -12,7 +12,7 @@ function Homepage(props) {
     
     if (!userData.user){ 
       props.history.push("/login");
-      console.log(userData.user);
+      
     }
     
   });

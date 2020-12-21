@@ -6,7 +6,7 @@ import Axios from 'axios';
 import LoginForm from '../../components/AuthComponents/LoginForm';
 
 
-export default function Login(props) {
+export default function Login() {
 
     const [email , setEmail] = useState();
     const [password , setPassword] = useState();

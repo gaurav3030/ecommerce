@@ -21,7 +21,7 @@ function Header() {
         <Link to="/"><div className="header-mid">HomeDecor</div></Link>
         
         <div className="header-right">
-            <div className="header-button">CART</div>
+            <div className="header-button">NEW PRODUCT</div>
             {
               adminData.admin ? <div className="header-button" onClick={logout}>LOGOUT</div> :
                 <Link to="/admin/login"><div className="header-button">LOGIN</div></Link>

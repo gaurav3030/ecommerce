@@ -1,12 +1,13 @@
 import React, { useContext, useEffect , useState } from 'react';
 import '../Homepage/Homepage.css';
 import Error from '../../components/misc/Error';
-import Banner from '../../components/Banner/Banner';
 import AdminContext from '../../context/AdminContext';
+import ProductList from '../../components/AdminComponents/ProductList';
 import Axios from 'axios';
 
  
 function AdminHomepage(props) {
+  const [productForm , setProductForm ] = useState(0);
   const [productName , setProductName] = useState();
   const [productDescription , setProductDescription] = useState();
   const [productPrice , setProductPrice] = useState();
@@ -32,7 +33,7 @@ function AdminHomepage(props) {
       
       await Axios.post("http://localhost:5000/admin/products/add/",productFormObj);
     }catch(err){
-      err.response.data.msg && setError(err. response.data.msg);
+      err.response.data.msg && setError(err.response.data.msg);
     }
   }
   
@@ -40,10 +41,10 @@ function AdminHomepage(props) {
 
   return (
     <div>
-      <Banner />
+      <ProductList productForm={productForm} setProductForm={setProductForm}/>
       <div className="formcontainer">
         <div className="auth-page">
-            <h2>Login</h2>
+            <h2>Add Product</h2>
             {error && <Error message = {error} clearError={()=> setError(undefined) }/>}
             <form onSubmit={addproduct}>
                 <label htmlFor="productname">Product Name</label>

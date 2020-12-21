@@ -9,7 +9,7 @@ import Login from './pages/AuthPage/Login';
 import UserContext from './context/UserContext';
 import ShopPage from './pages/ShopPage/Shop';
 
-function App(props) {
+function App() {
   const [userData , setUserData] = useState({
     token: undefined,
     user: undefined,
