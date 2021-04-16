@@ -11,14 +11,22 @@
     border-right: 1px solid #ccc;
     
 }
+button{
+    outline:none;
+    border:none;
+}
 .newProductBtn{
     width: 90%;
-    background-color: #aaa;
+    background-color: rgb(47, 103, 255);
     text-align: center;
     margin: auto;
     color: white;
     padding: 10px 0;
+    
 
+}
+.hidden{
+    display:none;
 }
 .productscontent{
     display: flex;

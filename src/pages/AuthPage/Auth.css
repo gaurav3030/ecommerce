@@ -1,9 +1,14 @@
 .formcontainer{
     padding: 20px 0;
-    display: flex;
+    
+    position: absolute;
+    top: 0;
+    
     width: 100vw;
-    height: fit-content;
+    height: 100vh;
     justify-content: center;
+    background-color: #000000cc;
+
 }
 
 .auth-page{
@@ -12,6 +17,26 @@
     margin: 30px auto;
     text-align: center;
 
+}
+.auth-page-modal{
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%,-50%);
+    margin: 0px auto;
+    
+    
+
+}
+.newProductCloseBtn{
+    display: block;
+    background: none;
+    font-weight: bolder;
+    font-size: large;
+    right: 0px;
+    padding: 10px;
 }
 .auth-page h2{
     margin: 1rem 0;
@@ -42,7 +67,40 @@
     border-radius: 15px;
     margin: 0 auto;
 }
- 
+.auth-page-modal h2{
+    text-align: center;
+    margin: 1rem auto;
+    display: block;
+}
+.auth-page-modal label{
+    font-size: 1.1rem;
+    margin-left: 10%;
+}
+.auth-page-modal input[type="text"],
+.auth-page-modal input[type="email"],
+.auth-page-modal input[type="number"],
+.auth-page-modal input[type="file"],
+.auth-page-modal input[type="password"]{
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #000;
+    height: 2rem;
+    
+    text-align: center;
+    font-size: 1rem;
+    margin-left: 10%;
+}
+.auth-page-modal input[type="submit"]{
+    border: none;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: block;
+} 
 .title{
     width: 100%;
     text-align: center;

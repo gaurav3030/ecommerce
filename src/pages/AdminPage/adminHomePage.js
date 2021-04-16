@@ -42,8 +42,9 @@ function AdminHomepage(props) {
   return (
     <div>
       <ProductList productForm={productForm} setProductForm={setProductForm}/>
-      <div className="formcontainer">
-        <div className="auth-page">
+      <div className={`formcontainer ${productForm === 1 ? '' : 'hidden'}`}>
+        <div className="auth-page-modal">
+          <button className="newProductCloseBtn" onClick={e=> setProductForm(0)} >x</button>
             <h2>Add Product</h2>
             {error && <Error message = {error} clearError={()=> setError(undefined) }/>}
             <form onSubmit={addproduct}>

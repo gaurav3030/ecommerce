@@ -11,6 +11,7 @@ function Header() {
       token: undefined,
       user: undefined
     });
+    console.log(userData);
     localStorage.setItem("auth-token","");
   }
   
@@ -26,7 +27,10 @@ function Header() {
             <div className="header-button">CART</div>
             {
               userData.user ? <div className="header-button" onClick={logout}>LOGOUT</div> :
+              <>
                 <Link to="/login"><div className="header-button">LOGIN</div></Link>
+                <Link to="/register"><div className="header-button">REGISTER</div></Link>
+                </>
               
             }
             

@@ -12,6 +12,7 @@
 .auth-page label{
     font-size: 1.1rem;
 }
+
 .auth-page input[type="text"],
 .auth-page input[type="email"],
 .auth-page input[type="password"]{

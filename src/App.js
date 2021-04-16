@@ -42,7 +42,7 @@ function App() {
     }
     checkLoggedIn();
     
-  });
+  },[]);
   if (loading===0) {
     return null;
   }
@@ -56,7 +56,7 @@ function App() {
         <Header />
           <Switch>
             <Route path="/" component ={Homepage} exact />
-            <Route path="/register" component ={Register} />
+            <Route path="/register" component ={Register} exact />
             <Route path="/login" component ={Login} />
             <Route path="/shop" component ={ShopPage} />
           </Switch>

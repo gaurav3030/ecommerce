@@ -1,15 +1,16 @@
 import React , {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import AdminContext from '../../context/AdminContext'
+import AdminContext from '../../context/AdminContext';
 
 function Header() {
   const {adminData , setAdminData} = useContext(AdminContext);
   const logout = () => {
     setAdminData({
       token: undefined,
-      user: undefined
+      admin: undefined
     });
+    console.log(adminData);
     localStorage.setItem("auth-admin-token","");
   }
   return (

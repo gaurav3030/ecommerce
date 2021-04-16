@@ -37,10 +37,11 @@ function AdminPage() {
           }
           setLoading(1);
           
+          
         }
         checkLoggedIn();
         
-      });
+      },[]);
       if (loading===0) {
         return null;
       }
